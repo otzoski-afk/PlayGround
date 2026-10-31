@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1, user-scalable=no" />
+  <meta name="theme-color" content="#0a1024" />
+  <meta name="description" content="Super Mario — a hand-drawn pixel platformer for desktop and mobile. Run, jump, stomp Goombas and grab the flag." />
+  <title>Super Mario · PlayGround Edition</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23e33127'/%3E%3Crect x='6' y='7' width='20' height='6' rx='2' fill='%23fff6e8'/%3E%3Crect x='9' y='14' width='14' height='5' rx='1.5' fill='%23ffc39b'/%3E%3Crect x='11' y='20' width='10' height='6' rx='1.5' fill='%232f5fd0'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div id="app">
+    <header id="brand" aria-hidden="true">
+      <span class="brand-super">Super</span>
+      <span class="brand-mario">Mario</span>
+      <span class="brand-sub">World 1-1 &middot; Mushroom Plains</span>
+    </header>
+    <main id="stage-wrap">
+      <div id="stage">
+        <canvas id="game" width="800" height="450" aria-label="Super Mario platformer game"></canvas>
+
+        <div id="overlay" class="overlay show">
+          <div class="panel">
+            <p class="eyebrow">PlayGround Edition</p>
+            <h1 class="logo"><span class="super">Super</span><span class="mario">Mario</span></h1>
+            <p class="sub">World 1&#8209;1 &middot; Mushroom Plains</p>
+            <button id="startBtn" class="btn" type="button">Start Game</button>
+            <p class="keys"><span class="desk">&#8592; &#8594; move &middot; SPACE jump &middot; SHIFT run &amp; fire &middot; P pause</span><span class="touchhint">Touch controls appear below</span></p>
+          </div>
+        </div>
+
+        <div id="stage-buttons">
+          <button id="soundBtn" class="icon-btn" type="button" aria-label="Toggle sound" title="Toggle sound (M)">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path class="wave" d="M16 8.5a5 5 0 0 1 0 7"/><path class="wave" d="M18.5 6a8.5 8.5 0 0 1 0 12"/></svg>
+          </button>
+          <button id="pauseBtn" class="icon-btn" type="button" aria-label="Pause game" title="Pause (P)">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="5" width="3.6" height="14" rx="1"/><rect x="13.4" y="5" width="3.6" height="14" rx="1"/></svg>
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <div id="touch" aria-hidden="true">
+      <p class="deck-hint">Hold <b>B</b> to run &middot; tap <b>A</b> to jump</p>
+      <div class="touch-row">
+        <div class="pad pad-left">
+          <button class="tbtn" type="button" data-key="left" aria-label="Move left">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5 8 12l7 7z"/></svg>
+          </button>
+          <button class="tbtn" type="button" data-key="right" aria-label="Move right">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7z"/></svg>
+          </button>
+        </div>
+        <div class="pad pad-right">
+          <button class="tbtn tbtn-run" type="button" data-key="run" aria-label="Run and fire">B</button>
+          <button class="tbtn tbtn-jump" type="button" data-key="jump" aria-label="Jump">A</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="./src/game.js"></script>
+</body>
+</html>
