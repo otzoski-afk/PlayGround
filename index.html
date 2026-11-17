@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sky Sentinel</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="hud" aria-live="polite">
+      <div class="brand">Sky Sentinel</div>
+      <div class="stats">
+        <span>Score: <strong id="score">0</strong></span>
+        <span>Level: <strong id="level">1</strong></span>
+        <span>Hull: <strong id="hp">5</strong></span>
+      </div>
+    </div>
+
+    <canvas id="gameCanvas" width="960" height="540" aria-label="Sky Sentinel game canvas"></canvas>
+
+    <div id="message" class="message visible">
+      <div class="panel">
+        <h1>Sky Sentinel</h1>
+        <p>Navigate a neon storm. Dodge drones, blast raiders, and collect energy cores.</p>
+        <p>Move: WASD / Arrow Keys<br />Fire: Space / Click<br />Restart: Enter</p>
+        <button id="startBtn" type="button">Start Mission</button>
+      </div>
+    </div>
+
+    <div id="touchControls" class="touch-controls" aria-label="Touch controls">
+      <div class="dpad">
+        <button class="control" data-control="up" aria-label="Move up">▲</button>
+        <div class="middle-row">
+          <button class="control" data-control="left" aria-label="Move left">◀</button>
+          <button class="control" data-control="down" aria-label="Move down">▼</button>
+          <button class="control" data-control="right" aria-label="Move right">▶</button>
+        </div>
+      </div>
+      <button id="fireBtn" class="fire-button" aria-label="Fire">FIRE</button>
+    </div>
+
+    <script src="./game.js"></script>
+  </body>
+</html>
